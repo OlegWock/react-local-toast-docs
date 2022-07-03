@@ -21,7 +21,7 @@ updateToast(toastId, {
     text: 'Successfully downloaded!'
 });
 
-// Partial updated supported too
+// Partial updates supported too
 updateToast(toastId, {
     text: 'Successfully downloaded!'
 });
