@@ -193,7 +193,7 @@
     json5 "^2.2.1"
     semver "^6.3.0"
 
-"@babel/generator@^7.12.5", "@babel/generator@^7.18.2", "@babel/generator@^7.18.6":
+"@babel/generator@^7.12.5", "@babel/generator@^7.18.2", "@babel/generator@^7.18.6", "@babel/generator@^7.18.7":
   version "7.18.7"
   resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.18.7.tgz#2aa78da3c05aadfc82dbac16c99552fc802284bd"
   integrity sha512-shck+7VLlY72a2w9c3zYWuE1pwOKEiQHV7GTUbSnhyl5eu3i04t30tBY82ZRWrDfo3gkakCFtevExnxbkf2a3A==
@@ -414,10 +414,15 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
-"@babel/parser@^7.12.7", "@babel/parser@^7.18.3", "@babel/parser@^7.18.6":
+"@babel/parser@^7.12.7", "@babel/parser@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.6.tgz#845338edecad65ebffef058d3be851f1d28a63bc"
   integrity sha512-uQVSa9jJUe/G/304lXspfWVpKpK4euFLgGiMQFOCpM/bgcAdeoHwi/OQz23O9GK2osz26ZiXRRV9aV+Yl1O8tw==
+
+"@babel/parser@^7.18.3", "@babel/parser@^7.18.8":
+  version "7.18.8"
+  resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.18.8.tgz#822146080ac9c62dac0823bb3489622e0bc1cbdf"
+  integrity sha512-RSKRfYX20dyH+elbJK2uqAkVyucL+xXzhqlMD5/ZXx+dAAwpyB7HsvnHe/ZUGOF+xLr5Wx9/JoXVTj6BQE2/oA==
 
 "@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@^7.18.6":
   version "7.18.6"
@@ -1149,7 +1154,7 @@
     "@babel/parser" "^7.18.6"
     "@babel/types" "^7.18.6"
 
-"@babel/traverse@^7.12.9", "@babel/traverse@^7.13.0", "@babel/traverse@^7.18.2", "@babel/traverse@^7.18.6":
+"@babel/traverse@^7.12.9", "@babel/traverse@^7.13.0", "@babel/traverse@^7.18.6":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.18.6.tgz#a228562d2f46e89258efa4ddd0416942e2fd671d"
   integrity sha512-zS/OKyqmD7lslOtFqbscH6gMLFYOfG1YPqCKfAW5KrTeolKqvB8UelR49Fpr6y93kYkW2Ik00mT1LOGiAGvizw==
@@ -1165,10 +1170,34 @@
     debug "^4.1.0"
     globals "^11.1.0"
 
+"@babel/traverse@^7.18.2":
+  version "7.18.8"
+  resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.18.8.tgz#f095e62ab46abf1da35e5a2011f43aee72d8d5b0"
+  integrity sha512-UNg/AcSySJYR/+mIcJQDCv00T+AqRO7j/ZEJLzpaYtgM48rMg5MnkJgyNqkzo88+p4tfRvZJCEiwwfG6h4jkRg==
+  dependencies:
+    "@babel/code-frame" "^7.18.6"
+    "@babel/generator" "^7.18.7"
+    "@babel/helper-environment-visitor" "^7.18.6"
+    "@babel/helper-function-name" "^7.18.6"
+    "@babel/helper-hoist-variables" "^7.18.6"
+    "@babel/helper-split-export-declaration" "^7.18.6"
+    "@babel/parser" "^7.18.8"
+    "@babel/types" "^7.18.8"
+    debug "^4.1.0"
+    globals "^11.1.0"
+
 "@babel/types@^7.12.7", "@babel/types@^7.15.6", "@babel/types@^7.18.6", "@babel/types@^7.18.7", "@babel/types@^7.4.4":
   version "7.18.7"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.18.7.tgz#a4a2c910c15040ea52cdd1ddb1614a65c8041726"
   integrity sha512-QG3yxTcTIBoAcQmkCs+wAPYZhu7Dk9rXKacINfNbdJDNERTbLQbHGyVG8q/YGMPeCJRIhSY0+fTc5+xuh6WPSQ==
+  dependencies:
+    "@babel/helper-validator-identifier" "^7.18.6"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@^7.18.8":
+  version "7.18.8"
+  resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.18.8.tgz#c5af199951bf41ba4a6a9a6d0d8ad722b30cd42f"
+  integrity sha512-qwpdsmraq0aJ3osLJRApsc2ouSJCdnMeZwB0DhbtHAtRpZNZCdlbRnHIgcRKzdE1g0iOGg644fzjOBcdOz9cPw==
   dependencies:
     "@babel/helper-validator-identifier" "^7.18.6"
     to-fast-properties "^2.0.0"
@@ -3014,9 +3043,9 @@ core-js-pure@^3.20.2:
   integrity sha512-XpoouuqIj4P+GWtdyV8ZO3/u4KftkeDVMfvp+308eGMhCrA3lVDSmAxO0c6GGOcmgVlaKDrgWVMo49h2ab/TDA==
 
 core-js@^3.22.7:
-  version "3.23.3"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.23.3.tgz#3b977612b15da6da0c9cc4aec487e8d24f371112"
-  integrity sha512-oAKwkj9xcWNBAvGbT//WiCdOMpb9XQG92/Fe3ABFM/R16BsHgePG00mFOgKf7IsCtfj8tA1kHtf/VwErhriz5Q==
+  version "3.23.4"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.23.4.tgz#92d640faa7f48b90bbd5da239986602cfc402aa6"
+  integrity sha512-vjsKqRc1RyAJC3Ye2kYqgfdThb3zYnx9CrqoCcjMOENMtQPC7ZViBvlDxwYU/2z2NI/IPuiXw5mT4hWhddqjzQ==
 
 core-util-is@~1.0.0:
   version "1.0.3"
@@ -5531,9 +5560,9 @@ postcss-discard-unused@^5.1.0:
     postcss-selector-parser "^6.0.5"
 
 postcss-loader@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-7.0.0.tgz#367d10eb1c5f1d93700e6b399683a6dc7c3af396"
-  integrity sha512-IDyttebFzTSY6DI24KuHUcBjbAev1i+RyICoPEWcAstZsj03r533uMXtDn506l6/wlsRYiS5XBdx7TpccCsyUg==
+  version "7.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-7.0.1.tgz#4c883cc0a1b2bfe2074377b7a74c1cd805684395"
+  integrity sha512-VRviFEyYlLjctSM93gAZtcJJ/iSkPZ79zWbN/1fSH+NisBByEiVLqpdVDrPLVSi8DX0oJo12kL/GppTBdKVXiQ==
   dependencies:
     cosmiconfig "^7.0.0"
     klona "^2.0.5"
