@@ -6056,10 +6056,10 @@ react-loadable-ssr-addon-v5-slorber@^1.0.1:
   dependencies:
     "@babel/runtime" "^7.10.3"
 
-react-local-toast@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-local-toast/-/react-local-toast-1.1.0.tgz#3932acb41dbc3a326fcb0a8e18c06dfae0f51bc8"
-  integrity sha512-0z6XQkUt+HyPV0Cut2h3OC3fkP07wicFuhJTlwUVw2p0x3ULeW3RjrgXtV/DGmmU6YUkXNxOTny3zQkVnK+N9g==
+react-local-toast@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-local-toast/-/react-local-toast-1.1.1.tgz#36a1e2252f0e3853d4c3ebb796edf118fd8f343a"
+  integrity sha512-w+X7jZzGrc64Xic6N8Ap8CmunO6iRF5vzWDm/AXCP9LKBzXzAQvSLe/QYs3RPsNpLRXpaeJ9/MSdqO0eE1432Q==
   dependencies:
     "@babel/runtime" "^7.14.6"
     "@radix-ui/react-slot" "^0.1.2"
