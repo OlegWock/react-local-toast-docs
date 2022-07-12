@@ -18,7 +18,17 @@ yarn add react-local-toast
 
 ## Basic usage
 
-1. Wrap your application in `LocalToastProvider`:
+1. react-local-toast doesn't automatically inject its styles into DOM, you need to do that. In most cases it will be just:
+
+```js
+import 'react-local-toast/dist/bundle.css';
+// There is minified version too!
+import 'react-local-toast/dist/bundle.min.css';
+```
+
+This should work fine for most of tools (Create React App included). For more specific use cases (e.g. using toasts in Shadow DOM) you might want to inject styles manually.
+
+2. Wrap your application in `LocalToastProvider`:
 
 ```jsx
 import React from 'react';
@@ -32,7 +42,7 @@ export default () => {
 };
 ```
 
-2. Local toasts are linked to particular components on page, so let's mark our component as target for local toast:
+3. Local toasts are linked to particular components on page, so let's mark our component as target for local toast:
 
 ```jsx
 import React from 'react';
@@ -51,7 +61,7 @@ export const App = () => {
 
 Local toast uses refs to get position of component, so in case you want to use toasts with functional components – make sure they are wrapped in `React.forwardRef`.
 
-3. And final piece! Update your component to actually produce local toasts:
+4. And final piece! Update your component to actually produce local toasts:
 
 ```jsx
 import React from 'react';
@@ -70,6 +80,34 @@ export const App = () => {
     </div>);
 };
 ```
+
+In case you need to show toast from class component, you can use HOC like this:
+
+```tsx
+import { LocalToastTarget, withLocalToast, LocalToastHocProps } from 'react-local-toast';
+
+interface Props extends LocalToastHocProps {
+    name: string
+}
+
+class ClassComp extends React.Component<Props, any> {
+    sayHello = () => {
+        this.props.showToast('class_comp', `Hello, ${this.props.name}!`)
+    };
+    render() {
+        return (<div>
+            <LocalToastTarget name='class_comp'>
+                <button onClick={sayHello}>Say hello</button>
+            </LocalToastTarget>
+        </div>);
+    }
+}
+
+// And later use thic component as you usually do
+export default withLocalToast(ClassComp);
+```
+
+This will pass toast-related functions (exactly same as in `useLocalToast` hook) as props to wrapped component.
 
 Cool, huh?
 
@@ -259,4 +297,37 @@ export const useMyLocalToast = () => {
 };
 ```
 
-4. Congratulations! Now you can use your custom toasts. Just don't forget to wrap your app in `Provider` and target components in `Target`.
+4. (Optional) if you still use class components, you might want to crate HOC to expose methods from context to your class component. You can either write it from scratch or use one of functions provided by library: `createHocFromContext` or `createHocFromHook`. `createHocFromContext` accepts the context and will just pass methods from context as props to component. `createHocFromHook` accepts hook and passes its return value as component props. So, if you have your custom hook, I'd recommend to use this function to have unifyed interface and don't repeat yourself:
+
+```tsx
+export const withMyLocalToast = createHocFromHook(useMyLocalToast);
+```
+
+And later just wrap your class components in this HOC:
+
+```tsx
+import { WithLocalToastContextProps } from 'react-local-toast';
+
+// Replace T with your data type
+interface Props extends WithLocalToastContextProps<T> {
+    name: string
+}
+
+class ClassComp extends React.Component<Props, any> {
+    sayHello = () => {
+        this.props.showDissmissable('class_comp', `Hello, ${this.props.name}!`, 'How are you?')
+    };
+    render() {
+        return (<div>
+            <MyToastTarget name='class_comp'>
+                <button onClick={sayHello}>Say hello</button>
+            </MyToastTarget>
+        </div>);
+    }
+}
+
+// And later use thic component as you usually do
+export default withMyLocalToast(ClassComp);
+```
+
+5. Congratulations! Now you can use your custom toasts. Just don't forget to wrap your app in `Provider` and target components in `Target`.

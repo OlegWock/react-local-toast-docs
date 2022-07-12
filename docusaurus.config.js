@@ -36,7 +36,10 @@ const config = {
                 },
                 blog: false,
                 theme: {
-                    customCss: require.resolve('./src/css/custom.scss'),
+                    customCss: [
+                        require.resolve('./src/css/custom.scss'),
+                        require.resolve('react-local-toast/dist/bundle.css')
+                    ]
                 },
             }),
         ],
