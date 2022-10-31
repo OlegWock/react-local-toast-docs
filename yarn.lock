@@ -1732,6 +1732,13 @@
   dependencies:
     "@babel/runtime" "^7.13.10"
 
+"@radix-ui/react-compose-refs@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@radix-ui/react-compose-refs/-/react-compose-refs-1.0.0.tgz#37595b1f16ec7f228d698590e78eeed18ff218ae"
+  integrity sha512-0KaSv6sx787/hK3eF53iOkiSLwAGlFMx5lotrqD2pTjB18KbybKoEIgkNZTKC60YECDQTKGTRcDBILwZVqVKvA==
+  dependencies:
+    "@babel/runtime" "^7.13.10"
+
 "@radix-ui/react-slot@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@radix-ui/react-slot/-/react-slot-0.1.2.tgz#e6f7ad9caa8ce81cc8d532c854c56f9b8b6307c8"
@@ -6056,12 +6063,13 @@ react-loadable-ssr-addon-v5-slorber@^1.0.1:
   dependencies:
     "@babel/runtime" "^7.10.3"
 
-react-local-toast@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/react-local-toast/-/react-local-toast-1.1.1.tgz#36a1e2252f0e3853d4c3ebb796edf118fd8f343a"
-  integrity sha512-w+X7jZzGrc64Xic6N8Ap8CmunO6iRF5vzWDm/AXCP9LKBzXzAQvSLe/QYs3RPsNpLRXpaeJ9/MSdqO0eE1432Q==
+react-local-toast@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-local-toast/-/react-local-toast-1.1.4.tgz#afc5ad9980e9c47ed749d534fdba545d0ef04476"
+  integrity sha512-HonP/FWJw+TFvMYnhlqrg0ZaF27qjWpd40jv7uGmo54HcdEBnoIJt8yREwJ+Cox7ekTuFoJLPY/w/XBHVLv2Iw==
   dependencies:
     "@babel/runtime" "^7.14.6"
+    "@radix-ui/react-compose-refs" "^1.0.0"
     "@radix-ui/react-slot" "^0.1.2"
     clsx "^1.1.1"
     react-icons "^4.4.0"
